@@ -23,7 +23,7 @@ jobs:
         file: ./Dockerfile
         platforms: linux/amd64
         push: true
-        tags: mustafa-a-khan/restapi:latest
+        tags: mustafaakhan/restapi:latest
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
