@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: restapi
+    repo: https://github.com/MUSTAFA-A-KHAN/restapi.git
+    plan: free
+    branch: main
+    runtime: go
+    startCommand: ./restapi
+    buildCommand: go build -o restapi ./restapi
