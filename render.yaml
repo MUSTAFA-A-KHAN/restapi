@@ -6,4 +6,6 @@ services:
     branch: master
     runtime: go
     startCommand: ./restapi
-    buildCommand: go build -o restapi ./restapi
+    buildCommand: |
+      go mod tidy
+      go build
