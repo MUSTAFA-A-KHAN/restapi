@@ -3,7 +3,7 @@ services:
     name: restapi
     repo: https://github.com/MUSTAFA-A-KHAN/restapi.git
     plan: free
-    branch: main
+    branch: master
     runtime: go
     startCommand: ./restapi
     buildCommand: go build -o restapi ./restapi
