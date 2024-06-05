@@ -34,7 +34,7 @@ Our goal is to provide users with a seamless and intuitive platform to retrieve 
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/web-scraper.git
+   git clone https://github.com/mustafa-a-khan/restapi.git
    cd web-scraper
    ```
 
