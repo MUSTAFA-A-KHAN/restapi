@@ -1,17 +1,19 @@
 package main
 
-import (
-	"fmt"
-	"log"
-	"net/http"
-)
+import "github.com/labstack/echo/v4"
 
-func hellohandler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Hello World!")
+func hello(c echo.Context) error {
+	return c.JSON(200, "Hello World")
+}
+func statrApp(c echo.Context) error {
+	return c.JSON(200, "App has Started")
 }
 
 func main() {
-	http.HandleFunc("/hello", hellohandler)
-	fmt.Print("hello the app is starting")
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	e := echo.New()
+
+	e.GET("/hello", hello)
+	e.GET("/hello", statrApp)
+
+	e.Start(":8080")
 }
