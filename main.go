@@ -13,7 +13,7 @@ func main() {
 	e := echo.New()
 
 	e.GET("/hello", hello)
-	e.GET("/hello", statrApp)
+	e.GET("/", statrApp)
 
 	e.Start(":8080")
 }
