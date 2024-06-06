@@ -5,10 +5,10 @@ import (
 	"net/http"
 
 	"github.com/labstack/echo/v4"
-	"github.com/mustafa-a-khan/restapi/model"
+	"github.com/mustafa-a-khan/restapi/models"
 )
 
-var Movies = []model.Movie{}
+var Movies = []models.Movie{}
 
 // Hello is a handler function that returns "Hello, World!" response.
 func Hello(c echo.Context) error {
@@ -21,7 +21,7 @@ func StartApp(c echo.Context) error {
 }
 
 func CreateMovie(c echo.Context) error {
-	movie := new(model.Movie)
+	movie := new(models.Movie)
 	c.Bind(movie)
 	Movies = append(Movies, *movie)
 	return c.JSON(200, Movies)
@@ -31,7 +31,7 @@ func ReadMovie(c echo.Context) error {
 	return c.JSON(200, Movies)
 }
 func UpdateMovie(c echo.Context) error {
-	movie := new(model.Movie)
+	movie := new(models.Movie)
 	c.Bind(movie)
 	for i := range Movies {
 		if Movies[i].ID == movie.ID {
@@ -41,7 +41,7 @@ func UpdateMovie(c echo.Context) error {
 	return c.JSON(200, Movies)
 }
 func DeleteMovie(c echo.Context) error {
-	movie := new(model.Movie)
+	movie := new(models.Movie)
 	c.Bind(movie)
 	for i := range Movies {
 		if Movies[i].ID == movie.ID {
