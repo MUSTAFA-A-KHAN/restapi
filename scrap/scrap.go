@@ -4,12 +4,13 @@ import (
 	"fmt"
 
 	"github.com/gocolly/colly/v2"
+	"github.com/mustafa-a-khan/restapi/models"
 )
 
-func scrapperService(url string) {
+func ScrapperService(req models.ScrapeRequest) {
 
 	c := colly.NewCollector(
-		colly.AllowedDomains(url),
+		colly.AllowedDomains(req.URL),
 	)
 
 	c.OnHTML("a[href]", func(h *colly.HTMLElement) {
