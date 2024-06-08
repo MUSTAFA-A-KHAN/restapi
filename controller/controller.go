@@ -6,6 +6,7 @@ import (
 
 	"github.com/labstack/echo/v4"
 	"github.com/mustafa-a-khan/restapi/models"
+	"github.com/mustafa-a-khan/restapi/services"
 )
 
 var Movies = []models.Movie{}
@@ -49,4 +50,12 @@ func DeleteMovie(c echo.Context) error {
 		}
 	}
 	return c.JSON(200, Movies)
+}
+
+func Callmovie(c echo.Context) error {
+	Request := new(models.ScrapeRequest)
+	c.Bind(Request)
+	services.Test(*Request)
+	return c.JSON(200, Movies)
+
 }
