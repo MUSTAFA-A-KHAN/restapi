@@ -9,14 +9,15 @@ import (
 	"github.com/mustafa-a-khan/restapi/services"
 )
 
+// https://gogoanime3.co/category/one-piece
 func main() {
 	fmt.Print("inside main")
 
 	ScrapeReq := models.ScrapeRequest{
 		URL: "gogoanime3.co",
 		Parameters: map[string]string{
-			"param1": "value1",
-			"param2": "value2",
+			"path1": "one-piece-episode-99",
+			"path2": "",
 		},
 	}
 

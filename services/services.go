@@ -13,6 +13,8 @@ func Test(Req models.ScrapeRequest) {
 	fmt.Println("hii")
 	flag := false
 	count := 0
+	path1 := Req.Parameters["path1"]
+	// path2 := Req.Parameters["path2"]
 
 	// Initialize the collector with additional configurations
 	c := colly.NewCollector(
@@ -55,6 +57,6 @@ func Test(Req models.ScrapeRequest) {
 		flag = true
 	}
 	count = count + 1
-	c.Visit("https://" + url)
+	c.Visit("https://" + url + "/" + path1)
 
 }
